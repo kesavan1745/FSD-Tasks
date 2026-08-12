@@ -1,0 +1,95 @@
+<html>
+<head>
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            color: green;
+            margin-top: 100px;
+        }
+        .calculator {
+            width: 300px;
+            margin: auto;
+            padding: 40px;
+            border: 5px solid black;
+            border-radius: 20px;
+            background-color: aqua;
+        }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px;
+            color: blue;
+            font-size: large;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: sandybrown;
+        }
+        #result {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+
+        <h2>Simple Calculator</h2>
+
+        <input type="number" id="num1" placeholder="Enter first number">
+
+        <input type="number" id="num2" placeholder="Enter second number">
+
+        <br>
+        <br>
+
+        <button onclick="calculate('+')">+</button>
+        <button onclick="calculate('-')">-</button>
+        <button onclick="calculate('*')">×</button>
+        <button onclick="calculate('/')">÷</button>
+        <button onclick="clearnumber()">clear</button>
+
+        <p id="result">Result: </p>
+
+    </div>
+
+    <script> 
+
+        function calculate(operator) { 
+
+            let num1 = Number(document.getElementById("num1").value);
+            let num2 = Number(document.getElementById("num2").value);
+
+            let result;
+
+            if (operator == "+") {
+                result = num1 + num2;
+            }
+            else if (operator == "-") {
+                result = num1 - num2;
+            }
+            else if (operator == "*") {
+                result = num1 * num2;
+            }
+            else if (operator == "/") {
+                result = num1 / num2;
+            }
+
+            document.getElementById("result").innerHTML = "Result: " + result;
+        }
+        function clearnumber(){
+            
+            document.getElementById("num1").value="";
+            document.getElementById("num2").value="";
+            document.getElementById("result").innerHTML ="";
+        }
+
+    </script>
+</body>
+</html>
