@@ -1,0 +1,69 @@
+<html>
+<head>
+    <title>Shopping Cart</title>
+   </head>
+<body>
+ <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            color: blue;
+        }
+        .product {
+            display: inline-block;
+            border: 1px solid gray;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            border: 3px solid black;
+            background-color: lightcoral;
+            box-shadow: 2px 2px 20px green;
+        }
+        button {
+            padding: 8px;
+            cursor: pointer;
+            border-radius: 5px;
+            color: black;
+            background-color: sandybrown;
+            border:3px solid black;
+
+        }
+        #k7{
+            padding: 8px;
+            cursor: pointer;
+            border-radius: 5px;
+            color: white;
+            background-color: brown;
+        }
+    </style>
+    <h1>Shopping Cart</h1>
+    <div class="product">
+        <h3>Shirt</h3>
+        <p>₹500</p>
+        <button onclick="addToCart(500)">Add to Cart</button>
+    </div>
+
+    <div class="product">
+        <h3>Shoes</h3>
+        <p>₹1000</p>
+        <button onclick="addToCart(1000)">Add to Cart</button>
+    </div>
+    <div class="product">
+        <h3>Watch</h3>
+        <p>₹1500</p>
+        <button onclick="addToCart(1500)">Add to Cart</button>
+    </div>
+    <h2>Cart Total: ₹<span id="total">0</span></h2>
+    <button id="k7" onclick="clearrupees()">clear</button>
+    <script>
+        let total = 0;
+        function addToCart(price) {
+            total = total + price;
+            document.getElementById("total").innerHTML = total;
+        }
+        function clearrupees(){
+            document.getElementById("total").innerHTML ="";
+        }
+    </script>
+</body>
+</html>
