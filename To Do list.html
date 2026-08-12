@@ -1,0 +1,87 @@
+<html>
+<head>
+    <title>To-Do List</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h2{
+            color: blueviolet;
+            font-size: 40px;
+        }
+        .todo {
+            width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 5px solid black;
+            border-radius: 10px;
+        }
+        input {
+            padding: 10px;
+            width: 250px;
+            color: red;
+            font-size: large;
+        }
+        button {
+            padding: 10px;
+            cursor: pointer;
+            background-color: aqua;
+        }
+        li {
+            margin: 10px;
+            color: red;
+            text-align: left;
+            font-size: larger;
+        }
+        .delete {
+            margin-left: 20px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="todo">
+
+        <h2>My To-Do List</h2>
+
+        <input type="text" id="task" placeholder="Enter your task">
+
+        <button onclick="addTask()">Add</button>
+
+        <ul id="taskList"></ul>
+
+    </div>
+
+    <script>
+
+        function addTask() {
+
+            let task = document.getElementById("task").value;
+
+            if (task == "") {
+                alert("Please enter a task");
+                return;
+            }
+
+            let li = document.createElement("li");
+
+            li.innerHTML = task +
+                " <button class='delete' onclick='deleteTask(this)'>Delete</button>";
+
+            document.getElementById("taskList").appendChild(li);
+
+            document.getElementById("task").value = "";
+        }
+
+        function deleteTask(button) {
+            button.parentElement.remove();
+        }
+
+    </script>
+
+</body>
+</html>
